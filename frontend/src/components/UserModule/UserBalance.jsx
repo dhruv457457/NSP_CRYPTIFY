@@ -21,11 +21,11 @@ const UserBalance = ({ registeredName, provider }) => {
     <p className="text-sm lg:text-lg break-all text-gray-300">{userAddress || "Not connected"}</p>
   
   
-    <p className="text-md lg:text-xl font-semibold mt-3">ETH Balance:</p>
-    <p className="text-lg font-bold text-green-400">{balance} ETH</p>
+    <p className="text-md lg:text-xl font-semibold mt-3">PHAR Balance:</p>
+    <p className="text-lg font-bold text-green-400">{balance} PHAR</p>
   
     <p className="text-md lg:text-xl font-semibold mt-3">Pending Balance:</p>
-    <p className="text-lg font-bold text-yellow-400">{pendingBalance} ETH</p>
+    <p className="text-lg font-bold text-yellow-400">{pendingBalance} PHAR</p>
   
     <p className="text-md lg:text-xl font-semibold mt-3">Reputation Score:</p>
     <p className="text-lg font-bold text-blue-400">{reputation}</p>

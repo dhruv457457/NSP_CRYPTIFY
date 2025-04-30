@@ -36,7 +36,7 @@ const Transfer = () => {
       toast.error("❌ Please enter a valid amount!");
       return false;}
     if (isAddress && !ethers.isAddress(recipient)) {
-      toast.error("❌ Invalid Ethereum address!");
+      toast.error("❌ Invalid PHAR address!");
       return false;
     }return true;
   };

@@ -15,7 +15,7 @@ const CreateContractForm = ({ contractHooks, loading, setLoading }) => {
   const [errors, setErrors] = useState({});
   const [createdContractId, setCreatedContractId] = useState(null);
 
-  const coinTypes = ["EDU", "ETH", "USDT"];
+  const coinTypes = ["EDU", "PHAR", "USDT"];
 
   // Handle text/number input changes
   const handleChange = (e) => {

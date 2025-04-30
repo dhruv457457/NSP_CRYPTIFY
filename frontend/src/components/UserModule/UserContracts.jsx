@@ -155,7 +155,7 @@ const UserContracts = ({ provider }) => {
                     : "Receiver"}
                 </p>
                 <p>
-                  <strong>Amount:</strong> {contract.amount} ETH
+                  <strong>Amount:</strong> {contract.amount} PHAR
                 </p>
                 <p className="flex items-center gap-2">
                   <strong>Status:</strong>

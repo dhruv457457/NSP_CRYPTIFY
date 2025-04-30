@@ -10,27 +10,29 @@ function Docs() {
           method: "wallet_addEthereumChain",
           params: [
             {
-              chainId: "0xa045c", // Chain ID in hex format
-              chainName: "OpenCampus Codex Sepolia",
+              chainId: "0x1a4", // Example Chain ID in hex (420 in decimal)
+              chainName: "Pharos Mainnet",
               nativeCurrency: {
-                name: "EDU",
-                symbol: "EDU",
+                name: "Pharos",
+                symbol: "PHAR",
                 decimals: 18,
-              },rpcUrls: ["https://open-campus-codex-sepolia.drpc.org"],
-              blockExplorerUrls: ["https://opencampus-codex.blockscout.com"],
+              },
+              rpcUrls: ["https://rpc.pharosnetwork.xyz"],
+              blockExplorerUrls: ["https://explorer.pharosnetwork.xyz"],
             },
           ],
         });
       } catch (error) {
         console.error(error);
         alert(
-          "Failed to add network to MetaMask. Please try again or add it manually."
+          "Failed to add the Pharos network to MetaMask. Please try again or add it manually."
         );
       }
     } else {
       alert("MetaMask is not installed. Please install MetaMask first.");
     }
   };
+  
 
   const renderContent = () => {
     switch (activeSection) {
@@ -78,92 +80,89 @@ function Docs() {
           </>
         );
 
-        return (
-          <>
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">
-              Adding Chain
-            </h1>
-            <p className="text-gray-300 mb-8">
-              To add OpenCampus Codex Sepolia Testnet to your MetaMask wallet,
-              follow these steps:
-            </p>
-            <div className="border border-purple-500 rounded-lg p-4 md:p-6 mb-6 bg-purple-900 bg-opacity-30 w-full">
-              <h2 className="text-lg md:text-xl font-semibold text-purple-400 mb-2">
-                Automatic Method
-              </h2>
-              <p className="text-gray-300 mb-4">
-                The easiest way to add the OpenCampus Codex Sepolia Testnet is
-                by clicking the button below:
+        case "Adding Chain":
+          return (
+            <>
+              <h1 className="text-2xl md:text-3xl font-bold mb-4">
+                Adding Pharos Network
+              </h1>
+              <p className="text-gray-300 mb-8">
+                To add the Pharos network to your MetaMask wallet, follow these steps:
               </p>
-              <button
-                onClick={addChainToMetaMask}
-                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-semibold transition-colors duration-200 flex items-center gap-2"
-              >
-                <Wallet size={18} />
-                Add Chain to Your Wallet
-              </button>
-            </div>
-            <div className="border border-purple-500 rounded-lg p-4 md:p-6 bg-purple-900 bg-opacity-30 w-full">
-              <h2 className="text-lg md:text-xl font-semibold text-purple-400 mb-2">
-                Manual Method
-              </h2>
-              <p className="text-gray-300 mb-4">
-                If the automatic method doesn't work, you can manually add the
-                network with these details:
-              </p>
-              <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                <li>Network Name: OpenCampus Codex Sepolia</li>
-                <li>New RPC URL: https://open-campus-codex-sepolia.drpc.org</li>
-                <li>Chain ID: 656476 </li>
-                <li>Currency Symbol: EDU</li>
-                <li>
-                  Block Explorer URL: https://opencampus-codex.blockscout.com
-                </li>
-              </ul>
-            </div>
-          </>
-        );
-      case "Getting Test Tokens":
-        return (
-          <>
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">
-              Getting Test Tokens
-            </h1>
-            <p className="text-gray-300 mb-8">
-              Instructions for obtaining test tokens are as follows:
-            </p>
-            <div className="border border-purple-500 rounded-lg p-4 md:p-6 mb-6 bg-purple-900 bg-opacity-30 w-full">
-              <h2 className="text-lg md:text-xl font-semibold text-purple-400 mb-2">
-                Step 1: Go To HACKQUEST Website
-              </h2>
-              <p className="text-gray-300 mb-4">
-                Visit the official HACKQUEST website and Choose a Faucet.
-              </p>
-              <a
-                href="https://www.hackquest.io/faucets"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:underline flex items-center gap-1"
-              >
-                Faucet Section of HACKQUEST <ExternalLink size={16} />
-              </a>
-            </div>
+              <div className="border border-purple-500 rounded-lg p-4 md:p-6 mb-6 bg-purple-900 bg-opacity-30 w-full">
+                <h2 className="text-lg md:text-xl font-semibold text-purple-400 mb-2">
+                  Automatic Method
+                </h2>
+                <p className="text-gray-300 mb-4">
+                  Click the button below to automatically add the Pharos network:
+                </p>
+                <button
+                  onClick={addChainToMetaMask}
+                  className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-semibold transition-colors duration-200 flex items-center gap-2"
+                >
+                  <Wallet size={18} />
+                  Add Pharos Network
+                </button>
+              </div>
+              <div className="border border-purple-500 rounded-lg p-4 md:p-6 bg-purple-900 bg-opacity-30 w-full">
+                <h2 className="text-lg md:text-xl font-semibold text-purple-400 mb-2">
+                  Manual Method
+                </h2>
+                <p className="text-gray-300 mb-4">
+                  If the automatic method doesn't work, you can manually add the network with these details:
+                </p>
+                <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                  <li>Network Name: Pharos Mainnet</li>
+                  <li>New RPC URL: https://rpc.pharosnetwork.xyz</li>
+                  <li>Chain ID: 420</li>
+                  <li>Currency Symbol: PHAR</li>
+                  <li>Block Explorer URL: https://explorer.pharosnetwork.xyz</li>
+                </ul>
+              </div>
+            </>
+          );
 
-            <div className="border border-purple-500 rounded-lg p-6 bg-purple-900 bg-opacity-30 w-full">
-              <h2 className="text-xl font-semibold text-purple-400 mb-2">
-                Step 2: Choose a Faucet and Click on that
-              </h2>
-              <p className="text-gray-300 mb-3">
-                Follow the steps to get Free Testnet Faucet. Make sure to:
-              </p>
-              <ul className="list-disc pl-5 text-gray-300 space-y-1">
-                <li>Enter your ETH Address (wallet Address)</li>
-                <li>Click on Request Button</li>
-                <li>It can only be collected once every 24 hours!</li>
-              </ul>
-            </div>
-          </>
-        );
+        
+      case "Getting Test Tokens":
+  return (
+    <>
+      <h1 className="text-2xl md:text-3xl font-bold mb-4">
+        Getting Test PHAR Tokens
+      </h1>
+      <p className="text-gray-300 mb-8">
+        To obtain test PHAR tokens for development purposes, follow these steps:
+      </p>
+      <div className="border border-purple-500 rounded-lg p-4 md:p-6 mb-6 bg-purple-900 bg-opacity-30 w-full">
+        <h2 className="text-lg md:text-xl font-semibold text-purple-400 mb-2">
+          Step 1: Visit the Pharos Faucet
+        </h2>
+        <p className="text-gray-300 mb-4">
+          Navigate to the official Pharos faucet page.
+        </p>
+        <a
+          href="https://faucet.pharosnetwork.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:underline flex items-center gap-1"
+        >
+          Pharos Faucet <ExternalLink size={16} />
+        </a>
+      </div>
+      <div className="border border-purple-500 rounded-lg p-6 bg-purple-900 bg-opacity-30 w-full">
+        <h2 className="text-xl font-semibold text-purple-400 mb-2">
+          Step 2: Request Test Tokens
+        </h2>
+        <p className="text-gray-300 mb-3">
+          Enter your wallet address and request test tokens. Note:
+        </p>
+        <ul className="list-disc pl-5 text-gray-300 space-y-1">
+          <li>Ensure you're connected to the Pharos testnet.</li>
+          <li>Requests may be limited to once every 24 hours.</li>
+        </ul>
+      </div>
+    </>
+  );
+
 
       case "Making Transactions":
         return (
@@ -330,6 +329,7 @@ function Docs() {
           <div className="flex overflow-x-auto lg:overflow-y-auto lg:flex-col flex-row lg:flex-grow gap-2 px-4 py-3 text-white">
             {[
               "Installing MetaMask",
+              "Adding Chain",
               "Getting Test Tokens",
               "Making Transactions",
               "Register as User",

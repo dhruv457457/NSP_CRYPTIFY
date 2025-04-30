@@ -38,7 +38,7 @@ const TransactionItem = ({ tx, userAddress }) => {
         <strong>Receiver:</strong> {shortenAddress(tx.receiver)}
       </p>
       <p>
-        <strong>Amount:</strong> {tx.amount} ETH
+        <strong>Amount:</strong> {tx.amount} PHAR
       </p>
       <p>
         <strong>Message:</strong> {tx.message || "—"}

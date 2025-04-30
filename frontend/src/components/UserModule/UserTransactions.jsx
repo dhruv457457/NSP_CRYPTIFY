@@ -76,7 +76,7 @@ const UserTransactions = ({ provider }) => {
                   <strong>To:</strong> {tx.receiverName}
                 </p>
                 <p>
-                  <strong>Amount:</strong> {tx.amount} ETH
+                  <strong>Amount:</strong> {tx.amount} PHAR
                 </p>
                 <p>
                   <strong>Message:</strong> {tx.message}

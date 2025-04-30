@@ -66,7 +66,7 @@ const TransferForm = ({
 
         <input
           type="text"
-          placeholder="Amount (ETH)"
+          placeholder="Amount (PHAR)"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           className="border border-customPurple/30 p-2 rounded-md w-full bg-customInput text-cyan-50"

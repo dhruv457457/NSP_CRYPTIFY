@@ -11,7 +11,7 @@ interface UsernameRegistry {
 }
 
 /// @title FundTransferWithRegistry
-/// @notice A contract for sending, claiming, and managing escrowed funds using a username registry
+/// @notice 
 contract FundTransferWithRegistry is Ownable {
     struct Transaction {
         address sender;

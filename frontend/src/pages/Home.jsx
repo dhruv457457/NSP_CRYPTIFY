@@ -7,8 +7,6 @@ import Footer from "../components/HomeModule/Footer";
 import LogoCloud from "../components/HomeModule/LogoCloud";
 import CommitmentStepsSection from "../components/HomeModule/CommitmentStepsSection";
 import Chatbot from "../components/Global/Chatbot";
-
-// Slide-in + fade animation for better perceived performance
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
   animate: {
@@ -40,11 +38,7 @@ const cardItemVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
+      ease: "easeOut",}, },};
 const FeatureCard = memo(({ title, description, icon }) => (
   <motion.div variants={cardItemVariants}>
     <Cards title={title} description={description} icon={icon} />
@@ -82,7 +76,6 @@ const features = [
     ),
   },
 ];
-
 function Home() {
   return (
     <motion.div
@@ -93,9 +86,7 @@ function Home() {
       className="bg-customDarkpurple min-h-screen"
     >
       <Header />
-
-      {/* Features Section */}
-      <section className="w-full px-4 py-10 text-white">
+   <section className="w-full px-4 py-10 text-white">
         <div className="flex flex-col items-center text-center mx-4">
           <motion.h1
             className="text-customPurple text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4"
@@ -128,7 +119,6 @@ function Home() {
           </motion.div>
         </div>
       </section>
-
       <CommitmentStepsSection />
       <LogoCloud />
       <Footer />

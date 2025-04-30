@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Wallet } from "lucide-react";
 import { ExternalLink } from "lucide-react";
-
 function Docs() {
   const [activeSection, setActiveSection] = useState("Installing MetaMask");
-
-  // Function to handle adding chain to MetaMask
   const addChainToMetaMask = async () => {
     if (typeof window.ethereum !== "undefined") {
       try {
@@ -19,8 +16,7 @@ function Docs() {
                 name: "EDU",
                 symbol: "EDU",
                 decimals: 18,
-              },
-              rpcUrls: ["https://open-campus-codex-sepolia.drpc.org"],
+              },rpcUrls: ["https://open-campus-codex-sepolia.drpc.org"],
               blockExplorerUrls: ["https://opencampus-codex.blockscout.com"],
             },
           ],

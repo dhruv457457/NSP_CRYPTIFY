@@ -8,58 +8,38 @@ import { useWallet } from "../components/Global/WalletContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
-
 const Transfer = () => {
   const { walletData } = useWallet();
   const {
-    transactions,
-    fetchTransactions,
-    claimFunds,
-    sendFunds,
-    sendFundsToAddress,
-  } = useContract(walletData?.provider);
-
+    transactions,fetchTransactions,claimFunds,sendFunds, sendFundsToAddress,} = useContract(walletData?.provider);
   const [recipient, setRecipient] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
   const [isAddress, setIsAddress] = useState(false);
   const [loading, setLoading] = useState(false);
   const [isTransactionsLoaded, setIsTransactionsLoaded] = useState(false);
-
   const navigate = useNavigate();
   const location = useLocation();
-
   useEffect(() => {
-    const loadTransactions = async () => {
-      if (walletData?.address) {
-        try {
-          await fetchTransactions();
+    const loadTransactions = async () => {if (walletData?.address) {
+        try {await fetchTransactions();
         } catch (error) {
           console.error("Error loading transactions:", error);
           toast.error("Failed to load transactions!");
-        }
-      }
-      setIsTransactionsLoaded(true); // Always set to true
-    };
-    loadTransactions();
+        }}setIsTransactionsLoaded(true); };loadTransactions();
   }, [walletData?.address, fetchTransactions]);
-
   const validateInputs = () => {
     if (!recipient || recipient.trim() === "") {
       toast.error("❌ Enter a valid recipient username or address!");
-      return false;
-    }
+      return false;}
     if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
       toast.error("❌ Please enter a valid amount!");
-      return false;
-    }
+      return false;}
     if (isAddress && !ethers.isAddress(recipient)) {
       toast.error("❌ Invalid Ethereum address!");
       return false;
-    }
-    return true;
+    }return true;
   };
-
   const handleSendFunds = async () => {
     if (!walletData?.provider) {
       toast.error("🦊 Please connect your wallet!");
@@ -157,8 +137,7 @@ const Transfer = () => {
     <>
       <ToastContainer position="top-right" autoClose={5000} />
       <div className="flex flex-col bg-customDarkpurple justify-center items-center md:flex-row py-20 lg:max-h-screen">
-        <TransferForm
-          data-driver="transfer-form"
+        <TransferForm  data-driver="transfer-form"
           recipient={recipient}
           setRecipient={setRecipient}
           amount={amount}

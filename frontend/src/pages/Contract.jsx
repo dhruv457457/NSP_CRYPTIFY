@@ -11,7 +11,6 @@ import { useWallet } from "../components/Global/WalletContext";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 import { useNavigate, useLocation } from "react-router-dom";
-
 const Contract = () => {
   const { walletData } = useWallet();
   const contractHooks = useContract2(walletData?.provider);
@@ -26,7 +25,6 @@ const Contract = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const tourStarted = useRef(false);
-
   const handleGetContractDetails = async () => {
     if (!walletData?.provider) {
       toast.error("🦊 Please connect your wallet!");
@@ -60,15 +58,12 @@ const Contract = () => {
       intro: document.querySelector('[data-driver="contract-intro"]'),
       create: document.querySelector('[data-driver="create-contract"]'),
       fetch: document.querySelector('[data-driver="fetch-contract"]'),
-      // workPost: document.querySelector('[data-driver="work-post"]'),
     };
-
     if (!elements.intro || !elements.create || !elements.fetch) {
       console.error("❌ One or more elements not found:", elements);
       toast.error("Tour failed: Components not fully loaded.");
       return;
     }
-
     const contractTour = driver({
       showProgress: true,
       allowClose: true,
@@ -203,19 +198,7 @@ const Contract = () => {
             <ReputationFetcher
               contractHooks={contractHooks}
               walletProvider={walletData?.provider}
-            />
-          )}
-
-          {/* Uncomment this later if needed */}
-          {/* {showWorkPostForm && (
-            <WorkPostSection
-              data-driver="work-post"
-              contractHooks={contractHooks}
-              currentAccount={walletData?.address}
-              loading={loading}
-              setLoading={setLoading}
-            />
-          )} */}
+            />)}
         </div>
       </div>
     </>
